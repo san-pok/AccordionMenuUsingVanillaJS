@@ -2,6 +2,13 @@ const accordionContainer = document.querySelectorAll(".accordionContainer");
 
 accordionContainer.forEach((accordian)=>{
    accordian.addEventListener("click", ()=>{
-    accordian.classList.toggle("active")
+    accordionContainer.forEach((Currentitem)=>{
+       if(Currentitem !== accordian){
+         Currentitem.classList.remove("active")
+       }else{
+        Currentitem.classList.toggle("active")
+       }
+    })
+   
    })
 })
